@@ -2,12 +2,23 @@
 const express = require("express")
 const app = express()
 const mustacheExpress = require("mustache-express")
+const bodyParser = require("body-parser")
 const PORT = 3000
 
 // Configuring your view engine
 app.engine("mustache",mustacheExpress())
 app.set("views","./views")
 app.set("view engine","mustache")
+app.use(bodyParser.urlencoded({extended: false}))
+
+app.post('/register', (req,res) => {
+
+    let username = req.body.username
+    let password = req.body.password
+
+    console.log(username,password)
+    res.send("register")
+})
 
 app.get('/register', (req,res)  => {
     res.render("register")
