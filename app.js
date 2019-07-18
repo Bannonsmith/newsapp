@@ -43,6 +43,8 @@ app.post('/register', (req,res) => {
     })
 })
 
+// to  show the  register page
+
 app.get('/register', (req,res)  => {
     res.render("register")
 })
