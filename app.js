@@ -47,7 +47,7 @@ app.get('/register', (req,res)  => {
     res.render("register")
 })
 
-
+// to make sure your port is listening
 
 app.listen(PORT, () => {
     console.log(`Server has started on ${PORT}`)
