@@ -24,7 +24,7 @@ app.post('/register', (req,res) => {
 
     let username = req.body.username
     let password = req.body.password
-
+// hash and add salt rounds
     db.oneOrNone("SELECT userid  FROM users WHERE username = $1",[username])
     .then((user) => {
         if(user) {
